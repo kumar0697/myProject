@@ -7,6 +7,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RootFormComponent } from './root-form/root-form.component';
 import { SAdminFormComponent } from './s-admin-form/s-admin-form.component';
 import { AdminFormComponent } from './admin-form/admin-form.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,14 @@ import { AdminFormComponent } from './admin-form/admin-form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path:'',component:LoginFormComponent},
+      {path:'root-form',component:RootFormComponent},
+      {path:'s_admin-form',component:SAdminFormComponent},
+      {path:'admin-form',component:AdminFormComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

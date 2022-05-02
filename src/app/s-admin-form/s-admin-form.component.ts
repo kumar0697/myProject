@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-s-admin-form',
@@ -10,6 +11,9 @@ export class SAdminFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  save(form:NgForm){
+    console.log(form);
   }
 
 }
