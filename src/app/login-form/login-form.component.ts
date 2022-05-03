@@ -1,3 +1,4 @@
+import { keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -7,26 +8,31 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-logs:any=[]
+NgForm:any=[]
+logins:any=[]
 
   constructor() { }
   
   ngOnInit(): void {
   }
+
+
   
   save(form:NgForm){
     
     
-   let key =  JSON.stringify(form.value)
-   console.log(key)
- if(key){
-   localStorage.setItem(key,form.value)
-   this.logs.push([form.value]);
+    let key=JSON.stringify(form.value);
+
+console.log(key)
+   if(Array.length>0){
+     localStorage.setItem('sky',key);
+    
+ 
  }
   else{
-    localStorage.setItem(key,form.value)
+    localStorage.setItem('sky',key);
   }
     
-    
+  this.logins.push([form.value])
   }
 }
