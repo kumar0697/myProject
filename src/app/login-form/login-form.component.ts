@@ -9,9 +9,9 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 NgForm:any=[]
-logins:any=[]
+ 
 
-  constructor() { }
+constructor() { }
   
   ngOnInit(): void {
   }
@@ -20,19 +20,23 @@ logins:any=[]
   
   save(form:NgForm){
     
-    
-    let key=JSON.stringify(form.value);
-
-console.log(key)
-   if(Array.length>0){
-     localStorage.setItem('sky',key);
+    let obtain = form.value;
+    let key = JSON.stringify(obtain);
+    localStorage.setItem('sky',key);
+   console.log( localStorage.getItem('sky'));
+   /*
+    let userSaves = JSON.parse(localStorage.getItem('sky'))
+   if(){
+     localStorage.setItem('sky',JSON.stringify(key));
     
  
  }
   else{
-    localStorage.setItem('sky',key);
+    localStorage.setItem('sky',JSON.stringify([key]));
   }
     
-  this.logins.push([form.value])
-  }
+  this.userSave.push([form.value])
+  console.log(localStorage.getItem('sky'))*/
+  
+}
 }

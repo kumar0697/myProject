@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
       {path:'root-form',component:RootFormComponent},
       {path:'s_admin-form',component:SAdminFormComponent},
       {path:'admin-form',component:AdminFormComponent},
+      
     ])
   ],
   providers: [],
