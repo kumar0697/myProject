@@ -16,6 +16,6 @@ export class RootFormComponent implements OnInit {
   ngOnInit(): void {
   }
   save(form:NgForm){
-    console.log(form);
+    console.log(form.value);
   }
 }

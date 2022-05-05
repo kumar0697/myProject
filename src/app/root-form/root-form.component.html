@@ -1,6 +1,6 @@
 <form #rootForm="ngForm" class="form-group" (ngSubmit)="save(rootForm)">
 
-    <h3>Root Login</h3>
+    <h3>Sign-Up </h3>
     <div>
 
         <input type="text" name="name" placeholder="Enter Name here..." required ngModel id="">
@@ -21,10 +21,10 @@
         <label for="login">Types of User :</label>
         <select name="login" id="login">
             <option value=""> </option>
-            <option value="superadmin">Superadmin</option>
-            <option value="admin">Admin</option>
-            <option value="broker">Broker</option>
-            <option value="customer">Customer</option>
+            <option ngModel  value="superadmin">Superadmin</option>
+            <option ngModel value="admin">Admin</option>
+            <option ngModel value="broker">Broker</option>
+            <option ngModel value="customer">Customer</option>
         </select>
     </div>
     <div>
