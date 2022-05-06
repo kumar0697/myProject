@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -7,49 +8,59 @@ import {  NgForm } from '@angular/forms';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-users:any=[]
 
 
 
-constructor() { }
-  
+
+
+  constructor( private router:Router ) { }
+
   ngOnInit(): void {
   }
 
-  save(form:NgForm){
-    
-    let obtain = [form.value];
-    let key = JSON.stringify(obtain);
-   localStorage.setItem('sky',key);
+  save(form: NgForm) {
+    //get localstorage data here
+    let userJson: any = localStorage.getItem('users')
 
+    //do Json to parse
+    let users = JSON.parse(userJson)
 
-  localStorage.getItem('sky')
+    console.log(users);
 
-      if (obtain){
-        localStorage.setItem('sky',key);
-        this.users.push(obtain);
-        
-      }
-      
-      else{
-        localStorage.setItem('sky',key);
-      }
-      
-      /*
-      let userSaves = JSON.parse(localStorage.getItem('sky'))
-      if(){
-        localStorage.setItem('sky',JSON.stringify(key));
-        
-        
-      }
-      else{
-        localStorage.setItem('sky',JSON.stringify([key]));
-      }
-      
-      this.userSave.push([form.value])
-      console.log(localStorage.getItem('sky'))*/
-      
+    //find an emailid in array of user
+    let user = users.find(function (user: any) {
+      return user.email === form.value.username
+
+    })
+
+    //If email find in an array and input from form is same go to password else "Invalid Credential"
+
+    if (!user) {
+      alert("Invalid Credential");
+      return;
     }
-    
-  
+
+
+    //Check password for email which have same user array
+    if (user.password === form.value.password) {
+      alert("Logged In");
+      this.router.navigate(['/root-form'])
+      return;
+
+    }
+    else {
+      alert("Invalid Credential");
+      return;
+    }
+
+
+    //If an array password and input password is same "Logged In" else "Invalid Credential"
+
+
+
+
+
+  }
+
+
 }

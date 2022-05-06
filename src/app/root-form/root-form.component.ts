@@ -9,13 +9,39 @@ import { NgForm } from '@angular/forms';
 
 
 export class RootFormComponent implements OnInit {
-  
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  save(form:NgForm){
-    console.log(form.value);
+
+
+  save(form: NgForm) {
+    let user = form.value;
+
+    let usersJson: any = localStorage.getItem('users');
+
+    let users: any = JSON.parse(usersJson)
+
+
+    
+    if (users) {
+      users.push(user)
+      localStorage.setItem('users', JSON.stringify(users))
+    }
+    
+    else {
+      
+      users = []
+      users.push(user)
+      localStorage.setItem('users', JSON.stringify(users))
+    }
+
+    form.reset();
+    
+
   }
+
 }
+
