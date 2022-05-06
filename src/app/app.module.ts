@@ -25,11 +25,13 @@ import { JobsComponent } from './jobs/jobs.component';
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
-      {path:'',component:LoginFormComponent},
-      {path:'root-form',component:RootFormComponent},
-      {path:'s_admin-form',component:SAdminFormComponent},
-      {path:'admin-form',component:AdminFormComponent},
-      
+      { path: '', component: LoginFormComponent },
+      { path: 'root-form', component: RootFormComponent },
+      { path: 's_admin-form', component: SAdminFormComponent },
+      { path: 'admin-form', component: AdminFormComponent },
+      { path: 'jobs', component: JobsComponent },
+
+
     ])
   ],
   providers: [],
