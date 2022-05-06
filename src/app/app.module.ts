@@ -9,6 +9,7 @@ import { SAdminFormComponent } from './s-admin-form/s-admin-form.component';
 import { AdminFormComponent } from './admin-form/admin-form.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { JobsComponent } from './jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     LoginFormComponent,
     RootFormComponent,
     SAdminFormComponent,
-    AdminFormComponent
+    AdminFormComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,

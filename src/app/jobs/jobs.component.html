@@ -35,37 +35,3 @@
         </div>
     
     </form>
-
-    NgForm: any
-
-
-    constructor() { }
-  
-    ngOnInit(): void {
-    }
-  
-  
-    save(form: NgForm) {
-  
-      let job = form.value;
-  
-      let jobJson: any = localStorage.getItem('jobs')
-  
-      let jobs = JSON.parse(jobJson)
-  
-      if (!jobs) {
-        jobs = [];
-        jobs.push(job)
-        localStorage.setItem('jobs', JSON.stringify(jobs))
-      }
-      else {
-        jobs.push(job)
-        localStorage.setItem('jobs', JSON.stringify(jobs))
-      }
-     form.reset();
-  
-  
-    }
-  
-  }
-  
