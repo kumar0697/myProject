@@ -33,7 +33,7 @@ export class JobsComponent implements OnInit {
       jobs.push(job)
       localStorage.setItem('jobs', JSON.stringify(jobs))
     }
-    form.reset();
+    
 
 
   }
