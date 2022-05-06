@@ -1,71 +1,30 @@
-<form #jobForm="ngform" (ngSubmit)="save(jobForm)">
+<form #superadminForm="ngForm" class="form-group" (ngSubmit)="save(superadminForm)">
 
-    <h2>Job Form</h2>
+    <h3>Superadmin Login</h3>
     <div>
-        <label for="name">Name :</label>
-        <input type="text" name="name" placeholder="Enter Name " ngModel>
+        <input type="text" name="name" placeholder="Enter Name here..." required ngModel id="">
     </div>
-
     <div>
-        <label for="phone">Mobile :</label>
-        <input type="number" name="phone" placeholder="Enter Mobile Number " ngModel>
+
+        <input type="email" name="email" placeholder="Enter Email Address here..." required ngModel id="">
     </div>
-
     <div>
-        <label for="email">Email Id :</label>
-        <input type="email" name="email" placeholder="Enter Email Address " ngModel>
+
+        <input type="password" name="password" placeholder="Enter Password" required ngModel id="">
     </div>
-
     <div>
-        <label for="address"></label>
-        <input type="" name="" placeholder="Enter " ngModel>
+
+        <input type="number" name="moblie" placeholder="Enter Moblie Number" required ngModel id="">
     </div>
-
     <div>
-        <textarea name="address" placeholder="Enter Address" ngModel cols="30" rows="10">Address :<textarea>   
-        </div>
-        
-        <div>
-            <label for="UID"></label>
-            <input type="number" name="UID"   placeholder="Enter Addhar Card Number "   ngModel >
-        </div>
-        
-        <div>
-            <input type="submit" name="submit"   placeholder="SUBMIT"   ngModel >
-        </div>
-    
-    </form>
-
-    NgForm: any
-
-
-    constructor() { }
-  
-    ngOnInit(): void {
-    }
-  
-  
-    save(form: NgForm) {
-  
-      let job = form.value;
-  
-      let jobJson: any = localStorage.getItem('jobs')
-  
-      let jobs = JSON.parse(jobJson)
-  
-      if (!jobs) {
-        jobs = [];
-        jobs.push(job)
-        localStorage.setItem('jobs', JSON.stringify(jobs))
-      }
-      else {
-        jobs.push(job)
-        localStorage.setItem('jobs', JSON.stringify(jobs))
-      }
-     form.reset();
-  
-  
-    }
-  
-  }
-  
+        <label for="login">Types of User :</label>
+        <select name="login" id="login">
+            <option value="admin">Admin</option>
+            <option value="broker">Broker</option>
+            <option value="customer">Customer</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" name="superadmin">
+    </div>
+</form>
