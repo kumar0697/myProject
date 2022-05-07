@@ -21,10 +21,10 @@ export class LoginFormComponent implements OnInit {
   save(form: NgForm) {
     //get localstorage data here
     let userJson: any = localStorage.getItem('users')
-
+    
     //do Json to parse
     let users = JSON.parse(userJson)
-
+   
     console.log(users);
 
     //find an emailid in array of user
@@ -55,10 +55,6 @@ export class LoginFormComponent implements OnInit {
 
 
     //If an array password and input password is same "Logged In" else "Invalid Credential"
-
-
-
-
 
   }
 

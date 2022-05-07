@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-s-admin-form',
@@ -7,28 +8,35 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./s-admin-form.component.css']
 })
 export class SAdminFormComponent implements OnInit {
- NgForm:any
+  NgForm: any
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  save(form:NgForm){
+  save(form: NgForm) {
     let user = form.value;
-    
-    let usersJson :any = localStorage.getItem('user');
-     
+
+    let usersJson: any = localStorage.getItem('superadmin');
+
     let users = JSON.parse(usersJson);
     
-    users = []
-    users.push( user )
-     ( users.length  | users.length )
-    
-
-
+    if (!users) {
+      users = []
+      users.push(user)
+      localStorage.setItem('superadmin', JSON.stringify(users))
+    }
+    else {
+      users.push(user)
+      localStorage.setItem('superadmin', JSON.stringify(users))
+    }
+    this.router.navigate(['/'])
   }
-  
+
+
+
+
 
 }
 
