@@ -43,18 +43,20 @@ export class LoginFormComponent implements OnInit {
 
     //Check password for email which have same user array
     if (user.password === form.value.password) {
+      
+      //If an array password and input password is same "Logged In"
       alert("Logged In");
       this.router.navigate(['/root-form'])
       return;
 
     }
+    // else "Invalid Credential"
     else {
       alert("Invalid Credential");
       return;
     }
 
 
-    //If an array password and input password is same "Logged In" else "Invalid Credential"
 
   }
 
