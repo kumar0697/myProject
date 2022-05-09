@@ -1,1 +1,13 @@
 <router-outlet></router-outlet>
+<h1>
+    Welcome to {{ title }} from To Do List!
+</h1>
+
+<app-input (submit)="addItem($event)"></app-input>
+
+<ul>
+    <li *ngFor="let item of todoList">
+        <app-admin-form []="item"></app-admin-form>
+
+    </li>
+</ul>

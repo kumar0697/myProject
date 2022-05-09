@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-form',
@@ -7,12 +6,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./admin-form.component.css']
 })
 export class AdminFormComponent implements OnInit {
+@Input() todoItem : any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  save(form:NgForm){
-    console.log(form);
-  }
+
+  
 }

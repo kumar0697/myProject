@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JobsComponent } from './jobs/jobs.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,7 @@ import { JobsComponent } from './jobs/jobs.component';
     RootFormComponent,
     SAdminFormComponent,
     AdminFormComponent,
-    JobsComponent
+    JobsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ import { JobsComponent } from './jobs/jobs.component';
       { path: 's_admin-form', component: SAdminFormComponent },
       { path: 'admin-form', component: AdminFormComponent },
       { path: 'jobs', component: JobsComponent },
+
 
 
     ])

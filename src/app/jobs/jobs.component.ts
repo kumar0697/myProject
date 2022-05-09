@@ -21,7 +21,7 @@ export class JobsComponent implements OnInit {
   save(form:NgForm) {
 
     let job = form.value;
-
+    
     let jobJson: any = localStorage.getItem('jobs')
 
     let jobs = JSON.parse(jobJson)
